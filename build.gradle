@@ -1,0 +1,31 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+version = 'v1.0.0'
+
+jar {
+   manifest {
+      attributes (
+         'Implementation-Title': 'Verify - Common Checks Library.',
+         'Implementation-Version': version
+      )
+   }
+   from sourceSets.main.allSource
+   doFirst {
+      from {
+         configurations.runtime.collect {
+            it.isDirectory() ? it : zipTree(it)
+         }
+      }
+   }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.21'
+    testCompile 'junit:junit:4.12'
+}
