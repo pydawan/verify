@@ -10,14 +10,6 @@ jar {
          'Implementation-Version': version
       )
    }
-   from sourceSets.main.allSource
-   doFirst {
-      from {
-         configurations.runtime.collect {
-            it.isDirectory() ? it : zipTree(it)
-         }
-      }
-   }
 }
 
 repositories {
