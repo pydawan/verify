@@ -2,7 +2,6 @@
 /build
 /gradle
 /.gradle
-./src/main/webapp/WEB-INF/lib/.gradle
 /.settings
 .project
 .classpath
