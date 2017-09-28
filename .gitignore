@@ -1,6 +1,9 @@
 /bin
-/build
-/gradle
+/build/classes
+/build/reports
+/build/resources
+/build/test-results
+/build/tmp
 /.gradle
 /.settings
 .project
