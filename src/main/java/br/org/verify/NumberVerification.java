@@ -345,4 +345,110 @@ public class NumberVerification<T extends Number> {
       return !in(collection);
    }
    
+   public boolean isZero(T number) {
+      boolean isZero = false;
+      if (number != null) {
+         if (isByte(number)) {
+            isZero = number.byteValue() == 0;
+         } else if (isShort(number)) {
+            isZero = number.shortValue() == 0;
+         } else if (isInteger(number)) {
+            isZero = number.intValue() == 0;
+         } else if (isLong(number)) {
+            isZero = number.longValue() == 0;
+         } else if (isFloat(number)) {
+            isZero = number.floatValue() == 0;
+         } else if (isDouble(number)) {
+            isZero = number.doubleValue() == 0;
+         } else {
+            // BigInteger
+            // BigDecimal
+         }
+      }
+      return isZero;
+   }
+   
+   public boolean isNotZero(T number) {
+      return !isZero(number);
+   }
+   
+   public boolean zero(T number) {
+      return isZero(number);
+   }
+   
+   public boolean notZero(T number) {
+      return isNotZero(number);
+   }
+   
+   public boolean isNegative(T number) {
+      boolean isNegative = false;
+      if (number != null) {
+         if (isByte(number)) {
+            isNegative = number.byteValue() < 0;
+         } else if (isShort(number)) {
+            isNegative = number.shortValue() < 0;
+         } else if (isInteger(number)) {
+            isNegative = number.intValue() < 0;
+         } else if (isLong(number)) {
+            isNegative = number.longValue() < 0;
+         } else if (isFloat(number)) {
+            isNegative = number.floatValue() < 0;
+         } else if (isDouble(number)) {
+            isNegative = number.doubleValue() < 0;
+         } else {
+            // BigInteger
+            // BigDecimal
+         }
+      }
+      return isNegative;
+   }
+   
+   public boolean isNotNegative(T number) {
+      return !isNegative(number);
+   }
+   
+   public boolean negative(T number) {
+      return isNegative(number);
+   }
+   
+   public boolean notNegative(T number) {
+      return isNotNegative(number);
+   }
+   
+   
+   public boolean isPositive(T number) {
+      boolean isPositive = false;
+      if (number != null) {
+         if (isByte(number)) {
+            isPositive = number.byteValue() > 0;
+         } else if (isShort(number)) {
+            isPositive = number.shortValue() > 0;
+         } else if (isInteger(number)) {
+            isPositive = number.intValue() > 0;
+         } else if (isLong(number)) {
+            isPositive = number.longValue() > 0;
+         } else if (isFloat(number)) {
+            isPositive = number.floatValue() > 0;
+         } else if (isDouble(number)) {
+            isPositive = number.doubleValue() > 0;
+         } else {
+            // BigInteger
+            // BigDecimal
+         }
+      }
+      return isPositive;
+   }
+   
+   public boolean isNotPositive(T number) {
+      return !isPositive(number);
+   }
+   
+   public boolean positive(T number) {
+      return isPositive(number);
+   }
+   
+   public boolean notPositive(T number) {
+      return isNotPositive(number);
+   }
+   
 }
