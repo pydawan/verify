@@ -85,4 +85,13 @@ public class VerifyTest {
       Assert.assertFalse(Verify.notContainsEmptyOrNull(new Object[] { Arrays.asList() }));
    }
    
+   @Test
+   public void testIntegerVerification() {
+      NumberVerification<Integer> nv = new NumberVerification<>(10);
+      nv.lessThan(50);
+      nv.lt(10);
+      
+      System.out.println(Verify.verifyNumber(20).between(1, 10));
+   }
+   
 }

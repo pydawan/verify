@@ -10,6 +10,7 @@ import java.util.Map;
  * 
  * @author thiago-amm
  * @version v1.0.0 15/08/2017
+ * @version v1.0.1 09/10/2017
  * @since v1.0.0
  */
 public final class Verify {
@@ -481,6 +482,18 @@ public final class Verify {
    
    public static boolean notOnlyPairs(Object... objects) {
       return notContainsOnlyPairs(objects);
+   }
+   
+   public static <T extends Number> NumberVerification<T> numberVerification(T number) {
+      return NumberVerification.<T>of(number);
+   }
+   
+   public static <T extends Number> NumberVerification<T> verifyNumber(T number) {
+      return numberVerification(number);
+   }
+   
+   public static <T extends Number> NumberVerification<T> number(T number) {
+      return numberVerification(number);
    }
    
 }
