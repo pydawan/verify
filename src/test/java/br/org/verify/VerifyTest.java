@@ -86,12 +86,16 @@ public class VerifyTest {
    }
    
    @Test
-   public void testIntegerVerification() {
+   public void testNumberVerification() {
       NumberVerification<Integer> nv = new NumberVerification<>(10);
-      nv.lessThan(50);
-      nv.lt(10);
-      
-      System.out.println(Verify.verifyNumber(20).between(1, 10));
+      Assert.assertTrue(nv.lessThan(50));
    }
+   
+   @Test
+   public void testNumberVerificationDSL() {
+      Assert.assertTrue(Verify.verifyNumber(5).between(1, 10));
+      Assert.assertTrue(Verify.verifyNumber(5).in(new Integer[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}));
+   }
+   
    
 }

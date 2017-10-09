@@ -1,5 +1,7 @@
 package br.org.verify;
 
+import java.util.Arrays;
+
 /**
  * <p>
  * Provê verificações diversas para tipos numéricos.
@@ -329,6 +331,18 @@ public class NumberVerification<T extends Number> {
    
    public boolean nbtw(T start, T end) {
       return notBetween(start, end);
+   }
+   
+   public boolean in(T[] collection) {
+      boolean isIn = false;
+      if (collection != null && collection.length > 0) {
+         isIn = Arrays.asList(collection).contains(value);
+      }
+      return isIn;
+   }
+   
+   public boolean notIn(T[] collection) {
+      return !in(collection);
    }
    
 }
