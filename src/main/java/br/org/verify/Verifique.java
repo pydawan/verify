@@ -375,19 +375,19 @@ public final class Verifique {
       return eArray(objeto);
    }
    
-   public static boolean naoEArray(Object objeto) {
+   public static boolean eNaoArray(Object objeto) {
       return !eArray(objeto);
    }
    
    public static boolean naoArray(Object objeto) {
-      return naoEArray(objeto);
+      return eNaoArray(objeto);
    }
    
    public static boolean eLista(Object objeto) {
       return objeto instanceof java.util.List;
    }
    
-   public static boolean naoELista(Object objeto) {
+   public static boolean eNaoLista(Object objeto) {
       return !eLista(objeto);
    }
    
@@ -396,14 +396,14 @@ public final class Verifique {
    }
    
    public static boolean naoLista(Object objeto) {
-      return naoELista(objeto);
+      return eNaoLista(objeto);
    }
    
    public static boolean eMapa(Object objeto) {
       return objeto instanceof java.util.Map;
    }
    
-   public static boolean naoEMapa(Object objeto) {
+   public static boolean eNaoMapa(Object objeto) {
       return !eMapa(objeto);
    }
    
@@ -412,14 +412,14 @@ public final class Verifique {
    }
    
    public static boolean naoMapa(Object objeto) {
-      return naoEMapa(objeto);
+      return eNaoMapa(objeto);
    }
    
    public static boolean eArrayOuLista(Object objeto) {
       return eArray(objeto) || eLista(objeto);
    }
    
-   public static boolean naoEArrayOuLista(Object objeto) {
+   public static boolean eNaoArrayOuLista(Object objeto) {
       return !eArrayOuLista(objeto);
    }
    
@@ -448,18 +448,18 @@ public final class Verifique {
       return ePar(objeto);
    }
    
-   public static boolean naoEPar(Object objeto) {
+   public static boolean eNaoPar(Object objeto) {
       return !ePar(objeto);
    }
    
    public static boolean naoPar(Object objeto) {
-      return naoEPar(objeto);
+      return eNaoPar(objeto);
    }
    
    public static boolean contemSoPares(Object... objetos) {
       if (eNaoNuloOuVazio(objetos)) {
          for (Object objeto : objetos) {
-            if (naoEPar(objeto)) {
+            if (eNaoPar(objeto)) {
                return false;
             }
          }
