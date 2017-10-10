@@ -1,6 +1,8 @@
 package br.org.verify;
 
+import java.lang.reflect.Array;
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -364,5 +366,131 @@ public final class Verifique {
       }
       return true;
    }
+   
+   public static boolean eArray(Object objeto) {
+      return (objeto instanceof Object[] || objeto.getClass().isArray());
+   }
+   
+   public static boolean array(Object objeto) {
+      return eArray(objeto);
+   }
+   
+   public static boolean naoEArray(Object objeto) {
+      return !eArray(objeto);
+   }
+   
+   public static boolean naoArray(Object objeto) {
+      return naoEArray(objeto);
+   }
+   
+   public static boolean eLista(Object objeto) {
+      return objeto instanceof java.util.List;
+   }
+   
+   public static boolean naoELista(Object objeto) {
+      return !eLista(objeto);
+   }
+   
+   public static boolean lista(Object objeto) {
+      return eLista(objeto);
+   }
+   
+   public static boolean naoLista(Object objeto) {
+      return naoELista(objeto);
+   }
+   
+   public static boolean eMapa(Object objeto) {
+      return objeto instanceof java.util.Map;
+   }
+   
+   public static boolean naoEMapa(Object objeto) {
+      return !eMapa(objeto);
+   }
+   
+   public static boolean mapa(Object objeto) {
+      return eMapa(objeto);
+   }
+   
+   public static boolean naoMapa(Object objeto) {
+      return naoEMapa(objeto);
+   }
+   
+   public static boolean eArrayOuLista(Object objeto) {
+      return eArray(objeto) || eLista(objeto);
+   }
+   
+   public static boolean naoEArrayOuLista(Object objeto) {
+      return !eArrayOuLista(objeto);
+   }
+   
+   public static boolean arrayOuLista(Object objeto) {
+      return eArrayOuLista(objeto);
+   }
+   
+   public static boolean naoArrayOuLista(Object objeto) {
+      return !arrayOuLista(objeto);
+   }
+   
+   public static boolean ePar(Object objeto) {
+      boolean ePar = false;
+      if (eNaoNuloOuVazio(objeto)) {
+         if (eArray(objeto) && Array.getLength(objeto) == 2) {
+            ePar = true;
+         }
+         if (eLista(objeto) && ((List<?>) objeto).size() == 2) {
+            ePar = true;
+         }
+      }
+      return ePar;
+   }
+   
+   public static boolean par(Object objeto) {
+      return ePar(objeto);
+   }
+   
+   public static boolean naoEPar(Object objeto) {
+      return !ePar(objeto);
+   }
+   
+   public static boolean naoPar(Object objeto) {
+      return naoEPar(objeto);
+   }
+   
+   public static boolean contemSoPares(Object... objetos) {
+      if (eNaoNuloOuVazio(objetos)) {
+         for (Object objeto : objetos) {
+            if (naoEPar(objeto)) {
+               return false;
+            }
+         }
+         return true;
+      }
+      return false;
+   }
+   
+   public static boolean somentePares(Object... objetos) {
+      return contemSoPares(objetos);
+   }
+   
+   public static boolean naoContemSomentePares(Object... objetos) {
+      return !contemSoPares(objetos);
+   }
+   
+   public static boolean naoSomentePares(Object... objetos) {
+      return naoContemSomentePares(objetos);
+   }
+   
+   public static <T extends Number> VerificacaoNumerica<T> verificacaoNumerica(T numero) {
+      return VerificacaoNumerica.<T>de(numero);
+   }
+   
+   public static <T extends Number> VerificacaoNumerica<T> verificarNumero(T numero) {
+      return verificacaoNumerica(numero);
+   }
+   
+   public static <T extends Number> VerificacaoNumerica<T> numero(T numero) {
+      return verificacaoNumerica(numero);
+   }
+
    
 }

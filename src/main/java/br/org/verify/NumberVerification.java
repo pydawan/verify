@@ -345,21 +345,21 @@ public class NumberVerification<T extends Number> {
       return !in(collection);
    }
    
-   public boolean isZero(T number) {
+   public boolean isZero() {
       boolean isZero = false;
-      if (number != null) {
-         if (isByte(number)) {
-            isZero = number.byteValue() == 0;
-         } else if (isShort(number)) {
-            isZero = number.shortValue() == 0;
-         } else if (isInteger(number)) {
-            isZero = number.intValue() == 0;
-         } else if (isLong(number)) {
-            isZero = number.longValue() == 0;
-         } else if (isFloat(number)) {
-            isZero = number.floatValue() == 0;
-         } else if (isDouble(number)) {
-            isZero = number.doubleValue() == 0;
+      if (value != null) {
+         if (isByte(value)) {
+            isZero = value.byteValue() == 0;
+         } else if (isShort(value)) {
+            isZero = value.shortValue() == 0;
+         } else if (isInteger(value)) {
+            isZero = value.intValue() == 0;
+         } else if (isLong(value)) {
+            isZero = value.longValue() == 0;
+         } else if (isFloat(value)) {
+            isZero = value.floatValue() == 0;
+         } else if (isDouble(value)) {
+            isZero = value.doubleValue() == 0;
          } else {
             // BigInteger
             // BigDecimal
@@ -368,33 +368,33 @@ public class NumberVerification<T extends Number> {
       return isZero;
    }
    
-   public boolean isNotZero(T number) {
-      return !isZero(number);
+   public boolean isNotZero() {
+      return !isZero();
    }
    
-   public boolean zero(T number) {
-      return isZero(number);
+   public boolean zero() {
+      return isZero();
    }
    
-   public boolean notZero(T number) {
-      return isNotZero(number);
+   public boolean notZero() {
+      return isNotZero();
    }
    
-   public boolean isNegative(T number) {
+   public boolean isNegative() {
       boolean isNegative = false;
-      if (number != null) {
-         if (isByte(number)) {
-            isNegative = number.byteValue() < 0;
-         } else if (isShort(number)) {
-            isNegative = number.shortValue() < 0;
-         } else if (isInteger(number)) {
-            isNegative = number.intValue() < 0;
-         } else if (isLong(number)) {
-            isNegative = number.longValue() < 0;
-         } else if (isFloat(number)) {
-            isNegative = number.floatValue() < 0;
-         } else if (isDouble(number)) {
-            isNegative = number.doubleValue() < 0;
+      if (value != null) {
+         if (isByte(value)) {
+            isNegative = value.byteValue() < 0;
+         } else if (isShort(value)) {
+            isNegative = value.shortValue() < 0;
+         } else if (isInteger(value)) {
+            isNegative = value.intValue() < 0;
+         } else if (isLong(value)) {
+            isNegative = value.longValue() < 0;
+         } else if (isFloat(value)) {
+            isNegative = value.floatValue() < 0;
+         } else if (isDouble(value)) {
+            isNegative = value.doubleValue() < 0;
          } else {
             // BigInteger
             // BigDecimal
@@ -403,34 +403,34 @@ public class NumberVerification<T extends Number> {
       return isNegative;
    }
    
-   public boolean isNotNegative(T number) {
-      return !isNegative(number);
+   public boolean isNotNegative() {
+      return !isNegative();
    }
    
-   public boolean negative(T number) {
-      return isNegative(number);
+   public boolean negative() {
+      return isNegative();
    }
    
-   public boolean notNegative(T number) {
-      return isNotNegative(number);
+   public boolean notNegative() {
+      return isNotNegative();
    }
    
    
-   public boolean isPositive(T number) {
+   public boolean isPositive() {
       boolean isPositive = false;
-      if (number != null) {
-         if (isByte(number)) {
-            isPositive = number.byteValue() > 0;
-         } else if (isShort(number)) {
-            isPositive = number.shortValue() > 0;
-         } else if (isInteger(number)) {
-            isPositive = number.intValue() > 0;
-         } else if (isLong(number)) {
-            isPositive = number.longValue() > 0;
-         } else if (isFloat(number)) {
-            isPositive = number.floatValue() > 0;
-         } else if (isDouble(number)) {
-            isPositive = number.doubleValue() > 0;
+      if (value != null) {
+         if (isByte(value)) {
+            isPositive = value.byteValue() > 0;
+         } else if (isShort(value)) {
+            isPositive = value.shortValue() > 0;
+         } else if (isInteger(value)) {
+            isPositive = value.intValue() > 0;
+         } else if (isLong(value)) {
+            isPositive = value.longValue() > 0;
+         } else if (isFloat(value)) {
+            isPositive = value.floatValue() > 0;
+         } else if (isDouble(value)) {
+            isPositive = value.doubleValue() > 0;
          } else {
             // BigInteger
             // BigDecimal
@@ -439,16 +439,16 @@ public class NumberVerification<T extends Number> {
       return isPositive;
    }
    
-   public boolean isNotPositive(T number) {
-      return !isPositive(number);
+   public boolean isNotPositive() {
+      return !isPositive();
    }
    
-   public boolean positive(T number) {
-      return isPositive(number);
+   public boolean positive() {
+      return isPositive();
    }
    
-   public boolean notPositive(T number) {
-      return isNotPositive(number);
+   public boolean notPositive() {
+      return isNotPositive();
    }
    
 }
