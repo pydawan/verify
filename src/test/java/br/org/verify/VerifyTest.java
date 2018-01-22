@@ -71,6 +71,9 @@ public class VerifyTest {
       Assert.assertTrue(Verify.isNullOrEmpty(EMPTY_LIST));
       Assert.assertTrue(Verify.nullOrEmpty(null));
       Assert.assertFalse(Verify.isNullOrEmpty("a"));
+      Assert.assertTrue(Verify.isNullOrEmpty((Object[]) null));
+      Assert.assertTrue(Verify.isNullOrEmpty(new ArrayList<>(0)));
+      Assert.assertTrue(Verify.isNullOrEmpty(new HashMap<>(0)));
    }
    
    @Test
