@@ -1,7 +1,9 @@
 package br.org.verify;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -11,6 +13,11 @@ import java.util.Map;
  * @since v1.0.0
  */
 public final class Verifique {
+    
+    public static final String STRING_VAZIA = "";
+    public static final Object[] ARRAY_VAZIO = new Object[] {};
+    public static final List<?> LISTA_VAZIA = new ArrayList<>(0);
+    public static final Map<?, ?> MAPA_VAZIO = new HashMap<>(0);
    
    public static boolean eNulo(Object objeto) {
       return objeto == null;
