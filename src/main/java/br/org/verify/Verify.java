@@ -1,7 +1,9 @@
 package br.org.verify;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -14,6 +16,11 @@ import java.util.Map;
  * @since v1.0.0
  */
 public final class Verify {
+   
+   public static final String EMPTY_STRING = "";
+   public static final Object[] EMPTY_ARRAY = new Object[] {};
+   public static final List<?> EMPTY_LIST = new ArrayList<>(0);
+   public static final Map<?, ?> EMPTY_MAP = new HashMap<>(0);
    
    public static boolean isNull(Object object) {
       return object == null;
@@ -332,31 +339,6 @@ public final class Verify {
    
    public static boolean notExists(Object object) {
       return isNull(object);
-   }
-   
-   public static boolean isEmptyOrNull(Object... objects) {
-      // objects != null && objects.length > 0
-      if (!isEmptyOrNull((Object) objects)) {
-         for (Object object : objects) {
-            if (isEmptyOrNull(object)) {
-               return true;
-            }
-         }
-         return false;
-      }
-      return true;
-   }
-   
-   public static boolean isNotEmptyOrNull(Object... objects) {
-      return !isEmptyOrNull(objects);
-   }
-   
-   public static boolean emptyOrNull(Object... objects) {
-      return isEmptyOrNull(objects);
-   }
-   
-   public static boolean notEmptyOrNull(Object... objects) {
-      return isNotEmptyOrNull(objects);
    }
    
    public static boolean empty(Object... objects) {
