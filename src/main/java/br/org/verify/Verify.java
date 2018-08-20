@@ -333,6 +333,31 @@ public final class Verify {
       return isNotEmptyOrNull(object);
    }
    
+   public static boolean isEmptyOrNull(Object... objects) {
+       // objects != null && objects.length > 0
+       if (!isEmptyOrNull((Object) objects)) {
+          for (Object object : objects) {
+             if (isEmptyOrNull(object)) {
+                return true;
+             }
+          }
+          return false;
+       }
+       return true;
+    }
+    
+    public static boolean isNotEmptyOrNull(Object... objects) {
+       return !isEmptyOrNull(objects);
+    }
+    
+    public static boolean emptyOrNull(Object... objects) {
+       return isEmptyOrNull(objects);
+    }
+    
+    public static boolean notEmptyOrNull(Object... objects) {
+       return isNotEmptyOrNull(objects);
+    }
+   
    public static boolean exists(Object object) {
       return isNotNull(object);
    }
